@@ -46,7 +46,7 @@ const UpdateStock = () => {
 
     if (response.ok) {
       alert(mode === "admin" ? "Stock updated by Admin" : "Stock added by User");
-      navigate("/TD-UMS-Web/products");
+      navigate("/products");
     } else {
       alert("Failed to update stock");
     }

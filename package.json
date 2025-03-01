@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Vyshnav-7338.github.io/TD-UMS-Web",
+  "homepage": "https://td-ums-web.onrender.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

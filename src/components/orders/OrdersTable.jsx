@@ -105,7 +105,7 @@ const OrdersTable = () => {
 								</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>{order.date}</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-									<button className='text-indigo-400 hover:text-indigo-300 mr-2'  onClick={() => navigate(`/TD-UMS-Web/orders/${order.id}`)}>
+									<button className='text-indigo-400 hover:text-indigo-300 mr-2'  onClick={() => navigate(`/orders/${order.id}`)}>
 										<Eye size={18} />
 									</button>
 								</td>

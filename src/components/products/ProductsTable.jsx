@@ -53,7 +53,7 @@ const ProductsTable = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
-            onClick={() => navigate("/TD-UMS-Web/products/add")}
+            onClick={() => navigate("/products/add")}
           >
             <Plus size={18} />
             Add Product
@@ -127,7 +127,7 @@ const ProductsTable = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                       <button
                         className="text-indigo-400 hover:text-indigo-300 mr-2"
-                        onClick={() => navigate(`/TD-UMS-Web/updateStock/${product._id}`)}
+                        onClick={() => navigate(`/updateStock/${product._id}`)}
                       >
                         Update Stock
                       </button>

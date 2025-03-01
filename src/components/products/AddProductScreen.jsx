@@ -61,7 +61,7 @@ const AddProductScreen = () => {
       const data = await response.json();
       if (response.ok) {
         alert("Product added successfully");
-        navigate("/TD-UMS-Web/products");
+        navigate("/products");
       } else {
         setApiError(data.message || "Failed to add product");
       }
@@ -94,7 +94,7 @@ const AddProductScreen = () => {
       <div className="max-w-2xl mx-auto">
         <div className="mb-8">
           <Link
-            to="/TD-UMS-Web/products"
+            to="/products"
             className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />

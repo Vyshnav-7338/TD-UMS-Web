@@ -62,7 +62,7 @@ const EditUser = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSuccess(true);
-      setTimeout(() => navigate("TD-UMS-Web/users"), 2000); // Redirect after 2 seconds
+      setTimeout(() => navigate("/users"), 2000); // Redirect after 2 seconds
     } catch (error) {
       console.error("Error updating user:", error);
       setError("Failed to update user. Please try again.");
@@ -167,7 +167,7 @@ const EditUser = () => {
           <button
             className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-200"
             type="button"
-            onClick={() => navigate("/TD-UMS-Web/users")}
+            onClick={() => navigate("/users")}
           >
             Cancel
           </button>

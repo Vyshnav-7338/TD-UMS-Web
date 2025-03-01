@@ -33,7 +33,7 @@ const LoginPage = ( ) => {
       }
 
       localStorage.setItem("token", data.token);
-      navigate("/TD-UMS-Web/");
+      navigate("/");
     } catch (err) {
       console.error(err);
       setError("Something went wrong. Please try again.");

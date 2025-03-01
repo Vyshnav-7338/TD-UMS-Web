@@ -8,9 +8,9 @@ import DashboardRoutes from "./routes/DashboardRoutes";
 function App() {
   return (
     <Routes>
-      <Route path="/TD-UMS-Web/login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route
-        path="/TD-UMS-Web/*"
+        path="/*"
         element={
           <ProtectedRoute>
             <DashboardLayout />
