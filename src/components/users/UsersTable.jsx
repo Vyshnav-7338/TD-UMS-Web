@@ -83,7 +83,7 @@ const UsersTable = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
-            onClick={() => navigate("/add-user")}
+            onClick={() => navigate("/TD-UMS-Web/add-user")}
           >
             <Plus size={18} className="text-white" />
             <span>Add User</span>
@@ -178,7 +178,7 @@ const UsersTable = () => {
 
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                   <button className="text-indigo-400 hover:text-indigo-300 mr-2"
-				   onClick={() => navigate(`/edit-user/${user._id}`)}
+				   onClick={() => navigate(`/TD-UMS-Web/edit-user/${user._id}`)}
 				  >
                     Edit
                   </button>
