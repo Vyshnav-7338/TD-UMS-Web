@@ -15,7 +15,6 @@ const ProductsPage = () => {
 		const fetchStats = async () => {
 		  try {
 			const token = localStorage.getItem("token"); 
-			console.log(token)
 			const response = await fetch(`${BASE_URL}/api/products/fetch/stats`, {
 			  headers: { 
 				Authorization: `Bearer ${token}` 

@@ -22,7 +22,12 @@ const CategoryDistributionChart = () => {
 
   const fetchProductSales = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/product-sales`);
+      const token = localStorage.getItem("token");
+      const response = await axios.get(`${BASE_URL}/product-sales`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setProductSales(response.data);
     } catch (error) {
       console.error("Failed to fetch product sales:", error);

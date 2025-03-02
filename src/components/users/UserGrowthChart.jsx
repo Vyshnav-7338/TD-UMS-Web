@@ -17,7 +17,6 @@ const UserGrowthChart = () => {
 		  const response = await axios.get(`${BASE_URL}/api/users/growth`, {
 			headers: { Authorization: `Bearer ${token}` },
 		  });
-	console.log(response.data)
 		  setUserGrowthData(response.data);
 		} catch (error) {
 		  console.error("Error fetching user growth data:", error);

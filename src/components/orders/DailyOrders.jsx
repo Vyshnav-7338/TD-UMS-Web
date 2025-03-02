@@ -19,7 +19,6 @@ const DailyOrders = () => {
   const fetchDailyOrders = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/daily-orders`);
-      console.log(response.data);
       setDailyOrdersData(response.data);
     } catch (error) {
       console.error("Error fetching daily orders:", error);

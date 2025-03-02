@@ -13,12 +13,12 @@ const UsersTable = () => {
 
   const fetchUsers = async () => {
     try {
-      const token = localStorage.getItem("token"); // Get token from storage
+      const token = localStorage.getItem("token");
       const response = await fetch(`${BASE_URL}/get-userList`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Pass token in headers
+          Authorization: `Bearer ${token}`, 
         },
       });
 

@@ -62,7 +62,7 @@ const EditUser = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSuccess(true);
-      setTimeout(() => navigate("/users"), 2000); // Redirect after 2 seconds
+      setTimeout(() => navigate("/users"), 2000);
     } catch (error) {
       console.error("Error updating user:", error);
       setError("Failed to update user. Please try again.");

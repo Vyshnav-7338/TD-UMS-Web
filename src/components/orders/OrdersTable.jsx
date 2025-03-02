@@ -31,7 +31,6 @@ const OrdersTable = () => {
 		fetchOrders();
 	}, []);
 
-	// Search filter
 	const filteredOrders = orders.filter(
 		(order) =>
 			order.orderId.toLowerCase().includes(searchTerm.toLowerCase()) ||

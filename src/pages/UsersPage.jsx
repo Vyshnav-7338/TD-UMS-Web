@@ -7,6 +7,7 @@ import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
 import UsersTable from "../components/users/UsersTable";
 import UserGrowthChart from "../components/users/UserGrowthChart";
+import { BASE_URL } from "../api/api";
 
 const UsersPage = () => {
   const [userStats, setUserStats] = useState({
@@ -28,7 +29,6 @@ const UsersPage = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-
       setUserStats(response.data);
     } catch (error) {
       console.error("Error fetching user stats:", error);

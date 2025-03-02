@@ -1,33 +1,52 @@
 import {
   BarChart2,
-  DollarSign,
   Menu,
   Settings,
   ShoppingBag,
   ShoppingCart,
   Printer,
   Users,
+  PackageX,
+  PackageCheck,
+  PackagePlus,
 } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const SIDEBAR_ITEMS = [
-  {
-    name: "Overview",
-    icon: BarChart2,
-    color: "#6366f1",
-    href: "/",
-  },
+const ADMIN_SIDEBAR_ITEMS = [
+  { name: "Dashboard", icon: BarChart2, color: "#6366f1", href: "/" },
   { name: "Products", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
   { name: "Users", icon: Users, color: "#EC4899", href: "/users" },
   { name: "Orders", icon: ShoppingCart, color: "#F59E0B", href: "/orders" },
-  { name: "Pos", icon: Printer, color: "#F59E0B", href: "/pos" },
+  { name: "POS", icon: Printer, color: "#F59E0B", href: "/pos" },
   { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
+];
+
+const USER_SIDEBAR_ITEMS = [
+  { name: "AddedStoke", icon: PackagePlus, color: "#34D399", href: "/stock/user" },
+  {
+    name: "StokeRemain",
+    icon: PackageCheck,
+    color: "#3B82F6",
+    href: "/remain/stock/user",
+  },
+  {
+    name: "StokeOrdered",
+    icon: PackageX,
+    color: "#F87171",
+    href: "ordred/stock/user",
+  },
+  { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
+
 ];
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const SIDEBAR_ITEMS =
+    user.role === "admin" ? ADMIN_SIDEBAR_ITEMS : USER_SIDEBAR_ITEMS;
 
   return (
     <motion.div
@@ -42,6 +61,7 @@ const Sidebar = () => {
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           className="p-2 rounded-full hover:bg-gray-700 transition-colors max-w-fit"
+          aria-label="Toggle sidebar"
         >
           <Menu size={24} />
         </motion.button>
@@ -58,10 +78,10 @@ const Sidebar = () => {
                   {isSidebarOpen && (
                     <motion.span
                       className="ml-4 whitespace-nowrap"
-                      initial={{ opacity: 0, width: 0 }}
-                      animate={{ opacity: 1, width: "auto" }}
-                      exit={{ opacity: 0, width: 0 }}
-                      transition={{ duration: 0.2, delay: 0.3 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
                     >
                       {item.name}
                     </motion.span>
@@ -75,4 +95,5 @@ const Sidebar = () => {
     </motion.div>
   );
 };
+
 export default Sidebar;

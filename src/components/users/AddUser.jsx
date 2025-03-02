@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../api/api";
 
 const AddUser = () => {
@@ -18,6 +18,7 @@ const AddUser = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const token = localStorage.getItem('token')
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -62,6 +63,8 @@ const AddUser = () => {
           role: "Admin",
           photo: null,
         });
+      setTimeout(() => navigate("/users"), 2000);
+
       } else {
         setMessage(result.message || "Failed to add user.");
       }
@@ -86,7 +89,7 @@ const AddUser = () => {
         </div>
       <h2 className="text-xl font-semibold text-gray-100 mb-4">Add User</h2>
       {message && (
-        <p className="text-white bg-gray-700 p-2 rounded-md mb-4">{message}</p>
+        <p className="text-white bg-red-700 p-2 rounded-md mb-4">{message}</p>
       )}
       <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
         <div className="mb-4">

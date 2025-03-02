@@ -23,11 +23,10 @@ const OverviewPage = () => {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
-						"Authorization": `Bearer ${localStorage.getItem("token")}` // Example for JWT token
+						"Authorization": `Bearer ${localStorage.getItem("token")}` 
 					}
 				});
 				const data = await response.json();
-				console.log(data)
 				setStats(data);
 			} catch (error) {
 				console.error("Error fetching stats:", error);

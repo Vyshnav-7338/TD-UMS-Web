@@ -13,12 +13,18 @@ import AddProductScreen from '../components/products/AddProductScreen';
 import POSScreen from '../components/products/POSScreen';
 import UpdateStock from '../components/products/UpdateStock';
 import OrderDetails from '../components/orders/OrderDetails';
+import AddedStocksScreen from '../components/Userside/AddedStocksScreen';
+import RemainStockScreen from '../components/Userside/RemainStockListScreen';
+import OrderedUsersScreen from '../components/Userside/OrderedUsersScreen';
 
 const DashboardRoutes = () => {
   return (
     <Routes>
       <Route index element={<OverviewPage />} />
       <Route path="products" element={<ProductsPage />} />
+      <Route path="stock/user" element={<AddedStocksScreen />} />
+      <Route path="remain/stock/user" element={<RemainStockScreen />} />
+      <Route path="ordred/stock/user" element={<OrderedUsersScreen />} />
       <Route path="pos" element={<POSScreen />} />
       <Route path="products/add" element={<AddProductScreen />} />
       <Route path="/orders/:orderId" element={<OrderDetails />} />

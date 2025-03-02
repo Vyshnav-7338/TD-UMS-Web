@@ -5,7 +5,7 @@ import { BASE_URL } from '../api/api';
 const LoginPage = ( ) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // Add error state
+  const [error, setError] = useState(''); 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -31,9 +31,13 @@ const LoginPage = ( ) => {
         setError(data.message || "Login failed");
         return;
       }
-
       localStorage.setItem("token", data.token);
-      navigate("/");
+      localStorage.setItem("user", JSON.stringify(data.data));
+      if (data.data.role === "admin") {
+        navigate("/");
+      } else {
+        navigate("/stock/user");
+      }
     } catch (err) {
       console.error(err);
       setError("Something went wrong. Please try again.");
