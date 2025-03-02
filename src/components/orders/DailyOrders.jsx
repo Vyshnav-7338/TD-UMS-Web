@@ -18,7 +18,15 @@ const DailyOrders = () => {
 
   const fetchDailyOrders = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/daily-orders`);
+      const token = localStorage.getItem("token");
+
+      const response = await axios.get(`${BASE_URL}/daily-orders`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      
       setDailyOrdersData(response.data);
     } catch (error) {
       console.error("Error fetching daily orders:", error);
